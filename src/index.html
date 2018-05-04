@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>What&#39;s the deal with mutants?</title>
+  <link rel="stylesheet" type="text/css" href="build/build.css">
+</head>
+<body>
+<article class="deck">
+
+  <section class="build build-items">
+    <h1>Let's kill some mutants!</h1>
+    <ul>
+      <img src="images/scared-teenage-mutant-turtle.webp" height="50%" width="50%" alt="">
+    </ul>
+  </section>
+
+  <section>
+    <h2>#Devoxx2018</h2>
+    <h3><a href="https://www.youtube.com/watch?v=ZNDzDucCn4o">Nouvelle génération de tests pour projets Java</a></h3>
+    <ul class="substep" data-order="6" data-action="remove">
+      <li class="substep" data-order="1">Unit test</li>
+      <li class="substep" data-order="2">Code coverage</li>
+      <li class="substep" data-order="3">Backward Compatibility</li>
+      <li class="substep" data-order="4">Mutation Testing</li>
+      <li class="substep" data-order="5">Environment Testing</li>
+    </ul>
+    <ul class="substep" data-order="6" data-action="insert">
+        <img src="images/radioactive.webp" height="50%" width="50%" alt="">
+    </ul>
+  </section>
+
+  <section>
+    <h2>Mutation Testing?</a></h2>
+    <ul class="build build-items">
+      <img src="images/mutation-testing.png" height="75%" width="75%">
+      <li><a href="https://www.guru99.com/mutation-testing.html">https://www.guru99.com/mutation-testing.html</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example</h2>
+    <ul class="substep" data-order="1" data-action="remove">
+      <pre></pre>
+      <pre><code class="language-javascript">
+// Original code
+const shouldYouTryMutationTesting = (interest) => {
+  return (interest >= 0.75);
+};
+      </code></pre>
+    </ul>
+    <ul class="substep" data-order="1" data-action="insert">
+      <pre><code class="language-javascript">
+// Could be mutated as:
+const shouldYouTryMutationTesting = (interest) => {
+  /* 1 */ return (interest > 0.75);
+  /* 2 */ return (interest < 0.75);
+  /* 3 */ return false;
+  /* 4 */ return true;
+};
+      </code></pre>
+      <li><a href="https://stryker-mutator.io/mutators.html">https://stryker-mutator.io/mutators.html</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Theory</h2>
+    <ul class="build build-items">
+      <li>A mutant should be killed by a unit test</li>
+      <li>A survived mutant can indicated a falsy test</li>
+      <li>Thus, the mutation score is a quality indicator of your tests:</li>
+      <pre><code class="language-javascript">
+# Total detected = # timedOut + # killed
+# Total undetected = # survived + # no coverage
+# Total mutants = # Total detected + # Total undetected
+% Mutation score = # Total detected / # Total mutants * 100
+      </code></pre>
+    </ul>
+  </section>
+
+  <section class="emphatic emphatic-text">
+    <h2>Now, let's kill some goddam mutants!</h2>
+    <img src="images/mutant-hunt.gif" alt="">
+  </section>
+
+  <section>
+    <ul class="substep" data-order="1" data-action="remove">
+      <h2>Demo /w <a href="https://stryker-mutator.io/">Stryker</a></h2>
+    </ul>
+
+    <ul class="substep" data-order="2" data-action="insert">
+      <h2><a href="">Stryker Report</a></h2>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Just the beginning…</h2><br>
+    <ul class="build build-items">
+      <li>Try it... Use it... </li>
+      <li>Be careful of false positive...</li>
+    </ul>
+    <br>
+    <ul class="build build-items">
+      <li><strong>And of course...</strong></li>
+      <li><img src="images/kill-it-with-fire.gif"></li>
+    </ul>
+  </section>
+</article>
+
+<script src="build/build.js"></script>
+</body>
+</html>

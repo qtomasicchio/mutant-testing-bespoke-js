@@ -1,0 +1,43 @@
+// Put your custom styles here!
+
+// New to Stylus? Check out http://learnboost.github.io/stylus
+// You can use modern CSS thanks to Autoprefixer: https://github.com/ai/autoprefixer
+
+// Base styles for a Bespoke presentation
+.bespoke-slide
+	.substep
+		-webkit-transition all 0.3s ease
+		-moz-transition all 0.3s ease
+		-o-transition all 0.3s ease
+		-ms-transition all 0.3s ease
+		transition all 0.3s ease
+		&.inactive
+			opacity 0
+			-ms-filter "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+		&.active
+			opacity 1
+			-ms-filter none
+			filter none
+		&.removed
+			display none
+		&.unmarked
+			background none
+			color inherit
+			font-weight inherit
+	li
+		&.substep
+			&.inactive
+				-webkit-transform translateX(-10px) translateZ(-10px) rotateY(20deg)
+				-moz-transform translateX(-10px) translateZ(-10px) rotateY(20deg)
+				-o-transform translateX(-10px) translateZ(-10px) rotateY(20deg)
+				-ms-transform translateX(-10px) translateZ(-10px) rotateY(20deg)
+				transform translateX(-10px) translateZ(-10px) rotateY(20deg)
+/* activate & deactivate actions */
+@media print
+	.bespoke-slide
+		.substep
+			&.inactive
+				opacity 1
+				-ms-filter none
+				filter none
+/* remove action */
