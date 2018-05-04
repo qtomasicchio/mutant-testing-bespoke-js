@@ -48,6 +48,11 @@ You can view the slides outside of the local preview server by navigating to *do
 
 <a name="myfootnote1">1</a>: We strongly recommend using [nvm](https://github.com/creationix/nvm) to manage Node.
 
+## View slides on Github pages
+
+Simply go to <a href="https://qtomasicchio.github.io/mutant-testing-bespoke-js/index.html" target="_blank">Github Pages</a>
+, and enjoy!
+
 
 ## Credits
 
