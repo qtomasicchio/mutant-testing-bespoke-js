@@ -51,10 +51,10 @@ You can view the slides outside of the local preview server by navigating to *di
 
 ## Credits
 
-* Bespoke: https://github.com/bespokejs/bespoke
-* Bespoke Theme Build Wars: https://github.com/akatopo/bespoke-theme-build-wars
-* Stryker: https://stryker-mutator.io/
-* Vincent Massol Presentation "https://cfp.devoxx.fr/2018/talk/OCF-8843/Nouvelle_generation_de_tests_pour_projets_Java": https://cfp.devoxx.fr/2018/talk/OCF-8843/Nouvelle_generation_de_tests_pour_projets_Java
+* [Bespoke](https://github.com/bespokejs/bespoke)
+* [Bespoke Theme Build Wars](https://github.com/akatopo/bespoke-theme-build-wars)
+* [Stryker](https://stryker-mutator.io/)
+* [Vincent Massol Presentation "Nouvelle_generation_de_tests_pour_projets_Java"](https://cfp.devoxx.fr/2018/talk/OCF-8843/Nouvelle_generation_de_tests_pour_projets_Java)
 
 ## License
 
