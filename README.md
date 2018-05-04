@@ -59,7 +59,7 @@ Simply go to <a href="https://qtomasicchio.github.io/mutant-testing-bespoke-js/i
 * [Bespoke](https://github.com/bespokejs/bespoke)
 * [Bespoke Theme Build Wars](https://github.com/akatopo/bespoke-theme-build-wars)
 * [Stryker](https://stryker-mutator.io/)
-* [Vincent Massol Presentation "Nouvelle_generation_de_tests_pour_projets_Java"](https://cfp.devoxx.fr/2018/talk/OCF-8843/Nouvelle_generation_de_tests_pour_projets_Java)
+* [Vincent Massol Presentation "Nouvelle generation de tests pour projets Java"](https://cfp.devoxx.fr/2018/talk/OCF-8843/Nouvelle_generation_de_tests_pour_projets_Java)
 
 ## License
 
