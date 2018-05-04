@@ -17,10 +17,10 @@ var pkg = require('./package.json'),
   stylus = require('gulp-stylus'),
   through = require('through'),
   uglify = require('gulp-uglify'),
-  isDist = process.argv.indexOf('serve') === -1,
+  isdocs = process.argv.indexOf('serve') === -1,
   // browserifyPlumber fills the role of plumber() when working with browserify
   browserifyPlumber = function(e) {
-    if (isDist) throw e;
+    if (isdocs) throw e;
     gutil.log(e.stack);
     this.emit('end');
   };
@@ -31,67 +31,67 @@ gulp.task('js', ['clean:js'], function() {
     .on('error', browserifyPlumber)
     .pipe(source('src/scripts/main.js'))
     .pipe(buffer())
-    .pipe(isDist ? uglify() : through())
+    .pipe(isdocs ? uglify() : through())
     .pipe(rename('build.js'))
-    .pipe(gulp.dest('dist/build'))
+    .pipe(gulp.dest('docs/build'))
     .pipe(connect.reload());
 });
 
 gulp.task('html', ['clean:html'], function() {
   return gulp.src('src/index.html')
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('docs'))
     .pipe(connect.reload());
 });
 
 gulp.task('css', ['clean:css'], function() {
   return gulp.src('src/styles/main.styl')
-    .pipe(isDist ? through() : plumber())
+    .pipe(isdocs ? through() : plumber())
     .pipe(stylus({ 'include css': true, paths: ['./node_modules'] }))
     .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
-    .pipe(isDist ? csso() : through())
+    .pipe(isdocs ? csso() : through())
     .pipe(rename('build.css'))
-    .pipe(gulp.dest('dist/build'))
+    .pipe(gulp.dest('docs/build'))
     .pipe(connect.reload());
 });
 
 gulp.task('images', ['clean:images'], function() {
   return gulp.src('src/images/**/*')
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('docs/images'))
     .pipe(connect.reload());
 });
 
 gulp.task('fonts', ['clean:fonts'], function() {
   return gulp.src('src/fonts/*')
-    .pipe(gulp.dest('dist/fonts'))
+    .pipe(gulp.dest('docs/fonts'))
     .pipe(connect.reload());
 });
 
 gulp.task('clean', function() {
-  return del.sync('dist');
+  return del.sync('docs');
 });
 
 gulp.task('clean:html', function() {
-  return del('dist/index.html');
+  return del('docs/index.html');
 });
 
 gulp.task('clean:js', function() {
-  return del('dist/build/build.js');
+  return del('docs/build/build.js');
 });
 
 gulp.task('clean:css', function() {
-  return del('dist/build/build.css');
+  return del('docs/build/build.css');
 });
 
 gulp.task('clean:images', function() {
-  return del('dist/images');
+  return del('docs/images');
 });
 
 gulp.task('clean:fonts', function() {
-  return del('dist/fonts');
+  return del('docs/fonts');
 });
 
 gulp.task('connect', ['build'], function() {
-  connect.server({ root: 'dist', port: process.env.PORT || 8080, livereload: true });
+  connect.server({ root: 'docs', port: process.env.PORT || 8080, livereload: true });
 });
 
 gulp.task('watch', function() {
@@ -103,7 +103,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('publish', ['clean', 'build'], function(done) {
-  ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
+  ghpages.publish(path.join(__dirname, 'docs'), { logger: gutil.log }, done);
 });
 
 // old alias for publishing on gh-pages
