@@ -1,5 +1,6 @@
 {
-  "name": "presentation-whats-the-deal-with-mutants",
+  "name": "mutant-testing-bespoke-js",
+  "description": "Presentation about \"Mutation Testing\" with Stryker powered by Bespoke.",
   "version": "1.0.0",
   "license": "MIT",
   "devDependencies": {
