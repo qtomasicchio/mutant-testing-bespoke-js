@@ -43,8 +43,8 @@ To build the presentation without starting the preview server, use:
  $ gulp
 ```
 
-In both cases, the files are built into the *docs* directory.
-You can view the slides outside of the local preview server by navigating to *docs/index.html* in your browser.
+In both cases, the files are built into the *dist* directory.
+You can view the slides outside of the local preview server by navigating to *dist/index.html* in your browser.
 
 <a name="myfootnote1">1</a>: We strongly recommend using [nvm](https://github.com/creationix/nvm) to manage Node.
 

@@ -1,3 +1,4 @@
 /.idea/
 /bespoke-theme-*/
 /node_modules/
+/dist/
