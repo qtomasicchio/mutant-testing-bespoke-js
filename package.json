@@ -23,7 +23,7 @@
     "gh-pages": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-connect": "^5.0.0",
+    "gulp-connect": "^5.7.0",
     "gulp-csso": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
